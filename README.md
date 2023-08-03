@@ -4,7 +4,8 @@
   Press F2 during boot to enter BIOS Setup. Go to the Power menu  
   Set Wake-on-LAN to Power On. Press F10 to save and exit the BIOS Setup  
   The option could also be named Power On By PCI Devices or similar  
-  You can always google how to enable WOL on the [YOUR MOTHERBOARD HERE]  
+  You can always google how to enable WOL on the **[YOUR MOTHERBOARD HERE]** 
+  
 ## Hardware
   
   Configure your Ethernet Controller/Network card in Windows:
