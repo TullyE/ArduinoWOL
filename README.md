@@ -1,4 +1,4 @@
-## Configure your PC for WOL
+#### Configure your PC for WOL
 # BIOS
   These steps might differ depending on your BIOS
   Press F2 during boot to enter BIOS Setup. Go to the Power menu
