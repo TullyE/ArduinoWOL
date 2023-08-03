@@ -1,6 +1,6 @@
 # Configure your PC for WOL
 ## BIOS
-  These steps might differ depending on your BIOS
+  These steps might differ depending on your BIOS\n
   Press F2 during boot to enter BIOS Setup. Go to the Power menu
   Set Wake-on-LAN to Power On. Press F10 to save and exit the BIOS Setup
   The option could also be named Power On By PCI Devices or similar
