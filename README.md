@@ -63,8 +63,47 @@ click password > change and enter your password
 click next > next and then click finish
 # I belive you also will have to disable the login screen. I'm not sure the steps on how to do that. So I recommend you google it for your system. 
 # Setup Blynk to communicate with the Arduino
+go to `https://blynk.cloud/dashboard/register` and enter your email.  
+Click I accept the terms and conditions and then click sign up.  
+Open your email and find the email from BLYNK. Click Create Password.  
+enter a password and click next  
+enter your name and click done.  
+click skip to skip the blynk tour and click cancel.  
+click the square on the left navigation bar to the templates page.  
+click new template and give it a name Ill use the name `WOL App`  
+select your hardware type `arduino` and how it's connected `ethernet`  
+Then click done. 
+Click the datastreams tab and in the top right click New Datastream. 
+Select Virtual Pin and keep all the default settings (Name: `Integer V0`, Alias: `Integer V0`, Pin: `V0`, Data type: `Integer`, Units: `none`, Min: `0`, Max: `0`, Default Value: `0`) and click create
+repeat 5 more times until you have 5 Integer Data Streams (`V0, V1, V2, V3, V4, V5`)  
+click new Datastream one more time and select Virtual Pin. except this time select Data Type: String and keep the default values of everything else (Name: `String V5`, Alias: `String V5`, PIN: `V5`)  
+click add device > give it a name (this will be what shows up in the App on your phone) and then click `copy to clipboard` to copy the Configuration for the program. 
+Go to your phone and download the Blynk app from the appstore. Right now it's the one with the Ukrain flag in the logo.  
+Open the app and click Log in. Enter your Email and Password and click login.  
+click the x in the top right to exit the tutorial and click the x again.  
+click Go to Developer Zone and you should see the template we just created. (mine says `WOLa`)
+click it and click the x. Click the + in the top right and select Button. Repeat this step 5 times so you have 5 buttons on the page.  
+click the + again and this time scroll down until you see terminal and select that.  
+click the first button to open the button editing page.  
+click the plus by the `Choose datastream` and select Integer V0  
+click design in the bottom right corner and for the labels give it the label: (Off: `Power on`, On: `Power On`)  
+click the x to save your work and go back to the edit page.  
+repeat this process for the other 4 buttons but instead labeling them with and having a unique interger datastream for each button.(`Clear Terminal`, `Shutdown`, `check power state`, `reset arduino`)  
+whe you've edited all the buttons click the terminal window, select choose datastream and click `String V5` untoggle the input line and then click x. 
 # Configure the Python code and the Arduino Code
-# Setup the Blynk APP
+now that blynk has been successfully setup we can go and add the authorization tokens to the WOL.ino file.  
+open the arduino IDE 
+follow the steps from this website to install the blynk library `https://docs.blynk.io/en/blynk-library-firmware-api/installation/install-blynk-library-in-arduino-ide`  
+open the WOL.ino file and replace the following with your BLYNK information:
+```
+#define BLYNK_TEMPLATE_ID "YOUR BLYNK TEMPLATE ID"
+#define BLYNK_TEMPLATE_NAME "YOUR BLYNK NAME"
+#define BLYNK_AUTH_TOKEN "YOUR BLYNK AUTH TOKEN"
+```
+#TODO ADD INSTURCTIONS ON HOW TO FIND THE ARDUINO MAC ADDRESS, IP ADDRESS, PC MAC ADDRESS, PC IP. 
+
+
+
 # You're Done!   
 Well done on setting this up! If you have any questions feel free to message me on discord at `@_3va_` and I'll do my best to answer any questions you have!
   
