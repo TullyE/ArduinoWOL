@@ -1,5 +1,5 @@
 # Configure your PC for WOL
-## BIOS
+## Configure your BIOS
   These steps might differ depending on your BIOS  
   Press F2 during boot to enter BIOS Setup. Go to the Power menu  
   Set Wake-on-LAN to Power On. Press F10 to save and exit the BIOS Setup  
@@ -7,10 +7,8 @@
     
   You can always google how to enable WOL on the **[YOUR MOTHERBOARD HERE]** 
   
-## Hardware
-  
-  Configure your Ethernet Controller/Network card in Windows:  
-  Device Manager > Network Adapters > Right click your Network card > Properties > Advanced > Look for (usually found at the bottom of the alphabetically sorted list):  
+## Configure your Ethernet Controller/Network card in Windows
+  Open Device Manager > Network Adapters > Right click your Network card > Properties > Advanced > Look for (usually found at the bottom of the alphabetically sorted list):  
   Wake on Magic Packet -> ensure value is enabled  
   Wake on pattern Match -> ensure value is enabled  
   WOL & Shutdown Link Speed -> 10 Mbps First  
