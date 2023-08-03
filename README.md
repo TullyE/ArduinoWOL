@@ -13,3 +13,12 @@
   Wake on pattern Match -> ensure value is enabled  
   WOL & Shutdown Link Speed **(you may not have this setting - that's okay)** -> 10 Mbps First  
   Then click Power Managment > Allow this device to wake the computer
+
+## Configure Windows power mangament settings
+  Press the windows key and search `choose a power plan`  
+  Click High performance
+  Press the windows key and type cmd > click run as administrator
+  type `powercfg -h off` to disable fast startup
+      I found this setting resets when I unplug my pc from the wall (while it's shutdown of course). Not sure if this is a universal quality but it is something to note. I spent HOURS trouble shooting my WOL setup on for this to be the issue
+  
+  
