@@ -61,7 +61,7 @@ if you're going to be using your computer as a remote desktop and won't have a w
 press the windows key and type `change your password`  
 click password > change and enter your password  
 click next > next and then click finish
-# I belive you also will have to disable the login screen. I'm not sure the steps on how to do that. So I reccomend you google it for your system. 
+# I belive you also will have to disable the login screen. I'm not sure the steps on how to do that. So I recommend you google it for your system. 
 # Setup Blynk to communicate with the Arduino
 # Configure the Python code and the Arduino Code
 # Setup the Blynk APP
