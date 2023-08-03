@@ -18,7 +18,8 @@
   Press the windows key and search `choose a power plan`  
   Click High performance
   Press the windows key and type cmd > click run as administrator
-  type `powercfg -h off` to disable fast startup
+  type `powercfg -h off` to disable fast startup  
       I found this setting resets when I unplug my pc from the wall (while it's shutdown of course). Not sure if this is a universal quality but it is something to note. I spent HOURS trouble shooting my WOL setup on for this to be the issue
-  
+  This is some more text
+##NEW HEADER
   
