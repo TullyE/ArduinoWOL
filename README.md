@@ -11,8 +11,5 @@
   Open Device Manager > Network Adapters > Right click your Network card > Properties > Advanced > Look for (usually found at the bottom of the alphabetically sorted list):  
   Wake on Magic Packet -> ensure value is enabled  
   Wake on pattern Match -> ensure value is enabled  
-  WOL & Shutdown Link Speed -> 10 Mbps First  
+  WOL & Shutdown Link Speed **(you may not have this setting)** -> 10 Mbps First  
   Then click Power Managment > Allow this device to wake the computer
-  WOL/Wake-on-Lan/Wake from shutdown/Magic Packet or similar settings, and make sure're they're configured
-  While still in the properties of your Network Card. Go to the Power Management tab, and make sure this box is ticked:
-  Allow this device to wake the computer. More advanced settings can be found in advanced power settings in the Control Panel
