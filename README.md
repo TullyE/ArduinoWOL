@@ -75,7 +75,7 @@ select your hardware type `arduino` and how it's connected `ethernet`
 Then click done. 
 Click the datastreams tab and in the top right click New Datastream. 
 Select Virtual Pin and keep all the default settings (Name: `Integer V0`, Alias: `Integer V0`, Pin: `V0`, Data type: `Integer`, Units: `none`, Min: `0`, Max: `0`, Default Value: `0`) and click create
-repeat 5 more times until you have 5 Integer Data Streams (`V0, V1, V2, V3, V4, V5`)  
+repeat 5 more times until you have 5 Integer Data Streams (`V0, V1, V2, V3, V4, V5`) 
 click new Datastream one more time and select Virtual Pin. except this time select Data Type: String and keep the default values of everything else (Name: `String V5`, Alias: `String V5`, PIN: `V5`)  
 click add device > give it a name (this will be what shows up in the App on your phone) and then click `copy to clipboard` to copy the Configuration for the program. 
 Go to your phone and download the Blynk app from the appstore. Right now it's the one with the Ukrain flag in the logo.  
@@ -89,10 +89,18 @@ click the plus by the `Choose datastream` and select Integer V0
 click design in the bottom right corner and for the labels give it the label: (Off: `Power on`, On: `Power On`)  
 click the x to save your work and go back to the edit page.  
 repeat this process for the other 4 buttons but instead labeling them with and having a unique interger datastream for each button.(`Clear Terminal`, `Shutdown`, `check power state`, `reset arduino`)  
+to make your life easier make sure you label the buttons like the following:  
+`Power On -> v0`  
+`Clear Terminal -> V1`  
+`Shutdown -> V2`  
+`Check Power State -> V3`  
+`Reset Arduino -> V4`  
+
 whe you've edited all the buttons click the terminal window, select choose datastream and click `String V5` untoggle the input line and then click x. 
 # Configure the Python code and the Arduino Code
 now that blynk has been successfully setup we can go and add the authorization tokens to the WOL.ino file.  
 open the arduino IDE 
+## Arduino.INO
 follow the steps from this website to install the blynk library `https://docs.blynk.io/en/blynk-library-firmware-api/installation/install-blynk-library-in-arduino-ide`  
 open the WOL.ino file and replace the following with your BLYNK information:
 ```
@@ -100,10 +108,73 @@ open the WOL.ino file and replace the following with your BLYNK information:
 #define BLYNK_TEMPLATE_NAME "YOUR BLYNK NAME"
 #define BLYNK_AUTH_TOKEN "YOUR BLYNK AUTH TOKEN"
 ```
-# TODO ADD INSTURCTIONS ON HOW TO FIND THE ARDUINO MAC ADDRESS, IP ADDRESS, PC MAC ADDRESS, PC IP. 
+## Finding your Arduino's IP/MAC address
+  open the Arduino IDE if it's not open already  
+  click file > new sketch  
+  paste the following
+```
+#include <Ethernet.h>
+#include <SPI.h>
 
+// MAC address for the Ethernet shield (replace with your desired MAC address if needed)
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 
+void setup() {
+  Serial.begin(9600);
+  while (!Serial) {}
+  
+  // Initialize Ethernet shield with the MAC address
+  if (Ethernet.begin(mac) == 0) {
+    Serial.println("Failed to configure Ethernet using DHCP");
+    while (true); // Loop forever if DHCP configuration fails
+  }
+  
+  Serial.println("Ethernet Shield Rev2 IP Address:");
+  Serial.println(Ethernet.localIP());
+  Serial.println();
 
+  Serial.println("Ethernet Shield Rev2 MAC Address:");
+  printMacAddress(mac);
+}
+
+void loop() {}
+
+// Function to print the MAC address
+void printMacAddress(byte mac[]) {
+  for (int i = 0; i < 6; i++) {
+    // Convert each byte to a hexadecimal string representation
+    char buf[3];
+    sprintf(buf, "%02X", mac[i]);
+    Serial.print(buf);
+    if (i < 5) {
+      Serial.print(":");
+    }
+  }
+  Serial.println();
+}
+```
+then click upload  
+Open your serial monitor by going tools > Serial Monitor and ensure the Baud Rate is 9600  
+take note of the Arduino's IP address and MAC address  
+
+## find your pc's IP address and MAC address  
+press the windows key and type CMD to open the command promt  
+type `ipconfig /all` and press enter  
+find your ethernet adapter. It should say something like `Ethernet Adapter Ethernet:`  
+scroll down until you see IPv4 Address. This is your internal IP address to use for this program  
+also find Physical Address. This is your MAC address.  
+take note of both of these.  
+
+## finish configuring the code  
+open up the python file and on the line that says `ARDUINO_IP = ` set that equal to your IP (for example: `ARDUINO_IP = 39.0.0.100`)  
+and then on the line that says `PC_IP = ` do the same. For example: `PC_IP = 39.0.0.111`  
+press file > save  
+
+open up WOL.INO and find the line `byte arduinoMAC[] = {0xDE 0xAD 0xBE 0xEF 0xFE 0xED}` and replace the DEADBEEFFEED with your arduino MAC address found earlier.  
+do the same for the line that says `byte pcMAC` but but your pc mac address (Physical address) that you found earlier.  
+replace the line `IPAddress arduinoIP(39, 0, 0, 100 )` with your arduino's IP address found earlier  
+finally replace the line that says `IPAddress pcIP(39, 0, 0, 111)` with your PC's IP address found earlier.  
+press upload to upload the arduino's code to the arduino and you should be good to go!  
 # You're Done!   
 Well done on setting this up! If you have any questions feel free to message me on discord at `@_3va_` and I'll do my best to answer any questions you have!
   
