@@ -178,6 +178,6 @@ Press upload to upload the arduino's code to the arduino and you should be good 
 Well done on setting this up! If you have any questions feel free to message me on discord at `@_3va_` and I'll do my best to answer any questions you have!  
 ## Moonlight / Sunshine
 I set this up so I could power my pc remotely when I leave for college and then remote desktop with Moonlight / Sunshine  
-If you use Sunshine you should be able to remote into your PC when it's logged out  
+If you use Sunshine as the host you should be able to remote into your PC when it's logged out  
 However if you use GFE as the host then you won't be able to connect to the pc until you log in  
 A solution I found was to disable the login screen and not have a password.  Not ideal for obvious security reasons   
