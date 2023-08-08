@@ -30,7 +30,6 @@ You can always google how to enable WOL on the **[YOUR MOTHERBOARD HERE]**
 ## Configure your Ethernet Controller/Network card in Windows
 `Open Device Manager` > `Network Adapters` > `Right click your Network card` > `Properties` > `Advanced` > Look for the following:  
 `Wake on Magic Packet` -> ensure value is set to `enabled`  
-`Wake on Pattern Match` -> ensure value is `enabled`  
 `WOL & Shutdown Link Speed` **(you may not have this setting - that's okay)** ensure it's value is set to `10 Mbps First`  
 Then click `Power Managment` > `Allow this device to wake the computer`  
 
