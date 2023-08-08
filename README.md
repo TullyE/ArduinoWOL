@@ -1,6 +1,8 @@
 # What is this guide?
 This is a comprehensive guide that will show how to configure your phone, along with an arduino and PC, to send Wake-On-LAN (WOL) magic packets to your pc from anywhere in the world!  
-WOL allows you to remotely power on a computer over a network connection. This is useful if you'd like to remote desktop into your PC but don't want to leave it on 24/7. You may also want to use your PC as a server but again don't want your PC to be on 24/7. Let's get started!
+WOL allows you to remotely power on a computer over a network connection. This is useful if you'd like to remote desktop into your PC but don't want to leave it on 24/7. You may also want to use your PC as a server but again don't want your PC to be on 24/7. Let's get started!  
+  
+This is my first time creating any kind of documentation like this so any feedback you have would be greatly appriciated
 # Required materials:
 PC with Windows 10/11 (earlier versions might work however I haven't tested them)  
 An Arduino MEGA 2560 (I belive an Arduino Uno would work as well however I also haven't tested with it)  
