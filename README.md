@@ -1,5 +1,9 @@
 # Images
-![image](https://github.com/TullyE/ArduinoWOL/assets/82793525/4b96e33d-9a8c-4f50-8bf6-f8bd7fb6e355)
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/82793525/261880814-4b96e33d-9a8c-4f50-8bf6-f8bd7fb6e355.png" alt="Image Description" width="250" />
+
+
+
+![image](https://github.com/TullyE/ArduinoWOL/assets/82793525/4b96e33d-9a8c-4f50-8bf6-f8bd7fb6e355 | width=100)
 
 # What is this guide?
 This is a comprehensive guide that will show how to configure your phone, along with an arduino and PC, to send Wake-On-LAN (WOL) magic packets to your pc from anywhere in the world!  
