@@ -79,7 +79,7 @@ Select your hardware type `arduino` and how it's connected `ethernet`
 Then click done  
 Click the datastreams tab and in the top right click New Datastream  
 Select Virtual Pin and keep all the default settings (Name: `Integer V0`, Alias: `Integer V0`, Pin: `V0`, Data type: `Integer`, Units: `none`, Min: `0`, Max: `0`, Default Value: `0`) and click create  
-Repeat 5 more times until you have 5 Integer Data Streams (`V0, V1, V2, V3, V4, V5`)  
+Repeat 5 more times until you have 5 Integer Data Streams (`V0, V1, V2, V3, V4`)  
 Click new Datastream one more time and select Virtual Pin. except this time select Data Type: String and keep the default values of everything else (Name: `String V5`, Alias: `String V5`, PIN: `V5`)  
 Click add device > give it a name (this will be what shows up in the App on your phone) and then click `copy to clipboard` to copy the Configuration for the program  
 Go to your phone and download the Blynk app from the appstore. Right now it's the one with the Ukrain flag in the logo  
